@@ -12,7 +12,7 @@ class ApiController extends Controller
 {
 
 
-    public function exportPdfTaksasi($est, $date,  $web = null)
+    public function exportPdfTaksasiNew($est, $date,  $web = null)
     {
         $estate_input = $est;
         $tgl = $date;
@@ -400,8 +400,9 @@ class ApiController extends Controller
         }
         $romanNumeral = convertToRoman2($rom[0]);
         $pathImage = storage_path('app/public/maps/maps_' . $estate_input . '_' . $tgl . '.jpg');
+        $filenameImage = 'maps_' . $estate_input . '_' . $tgl . '.jpg';
         // dd($pathImage);
-        $pdf = pdf::loadview('taksasi.cetak', [
+        $pdf = pdf::loadview('taksasi.newtaksasi.cetak', [
             'est' => $estate_input,
             'tgl' => $tgl,
             'namaEstate' => strtoupper($queryEstate->nama),
@@ -423,7 +424,8 @@ class ApiController extends Controller
             $pdfContent = $pdf->output();
             $base64Pdf = base64_encode($pdfContent);
             return response()->json([
-                'base64_pdf' => $base64Pdf
+                'base64_pdf' => $base64Pdf,
+                'filenameImage' => $filenameImage
             ]);
         }
     }
@@ -727,12 +729,13 @@ class ApiController extends Controller
         }
 
 
-        return view('taksasi.generateMaps', [
+        return view('taksasi.newtaksasi.generateMaps', [
             'arrData' => $arrData,
             'estate_plot' => $estate_plot,
             'userTaksasi' => $userTaksasi,
             'blokLatLn' => $blokLatLn,
-            'datetime' => $datetime
+            'datetime' => $datetime,
+            'estate' => $namaEstate
         ]);
     }
 

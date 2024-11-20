@@ -409,7 +409,7 @@
                             sendImageToServer(dataUrl, estateData, datetime);
                         });
                     });
-            }, 3000);
+            }, 2000); // 2 second delay to ensure everything is loaded
         });
     }
 
