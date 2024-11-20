@@ -65,6 +65,8 @@
 
         const estateData = arr[0][0];
 
+        // console.log(estateData);
+
         var geoJsonEst = '{"type"'
         geoJsonEst += ":"
         geoJsonEst += '"FeatureCollection",'
@@ -94,8 +96,11 @@
         geoJsonEst = geoJsonEst.substring(0, geoJsonEst.length - 1);
         geoJsonEst += ']}'
 
+
         // Parse the string into a JSON object
         var estate = JSON.parse(geoJsonEst)
+
+
 
         // Use the parsed GeoJSON object
         var estateLayer = L.geoJSON(estate, {
@@ -436,17 +441,25 @@
 
         legend.addTo(map);
 
+        if (centerBlok.getLayers().length > 0) {
+            map.fitBounds(estateLayer.getBounds());
+        }
+
+        // Return the map instance
+        return map;
+    }
+
+    function captureAndSaveMap(map, estateData, datetime) { // Add parameters here
         // Wait for all tiles to load
         map.whenReady(function() {
             setTimeout(() => {
                 const mapElement = document.getElementById('map');
 
-                // Set specific dimensions for the capture
                 const options = {
                     width: mapElement.offsetWidth,
                     height: mapElement.offsetHeight,
                     quality: 0.95,
-                    backgroundColor: '#ffffff' // Ensure white background
+                    backgroundColor: '#ffffff'
                 };
 
                 domtoimage.toJpeg(mapElement, options)
@@ -472,23 +485,14 @@
                     })
                     .catch(function(error) {
                         console.log('error gan');
-                        // console.error('Error generating image:', error);
                     });
-            }, 2000); // Increased timeout to 2 seconds
+            }, 2000);
         });
-
-        if (centerBlok.getLayers().length > 0) {
-            map.fitBounds(estateLayer.getBounds());
-        }
-
-
     }
 
-
-    // console.log(arrData)
-
     document.addEventListener('DOMContentLoaded', function() {
-        createMapImage(arrData, estate_plot, userTaksasi, blokPerEstate, datetime)
+        const map = createMapImage(arrData, estate_plot, userTaksasi, blokPerEstate, datetime);
+        captureAndSaveMap(map);
     });
 
 
