@@ -472,7 +472,10 @@
                                 })
                             })
                             .then(response => response.json())
-                            .then(data => console.log('Image saved:', data))
+                            .then(data => {
+                                console.log('Image saved:', data);
+                                console.log('Upload successfully gan');
+                            })
                             .catch(error => console.error('Error saving image:', error));
                     })
                     .catch(function(error) {
