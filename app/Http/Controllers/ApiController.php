@@ -829,4 +829,29 @@ class ApiController extends Controller
             ], 500);
         }
     }
+
+    public function deleteMapImage($filename)
+    {
+        try {
+            $filepath = "maps/{$filename}";
+
+            if (Storage::disk('public')->exists($filepath)) {
+                Storage::disk('public')->delete($filepath);
+                return response()->json([
+                    'success' => true,
+                    'message' => 'Image deleted successfully'
+                ]);
+            } else {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Image not found'
+                ], 404);
+            }
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Error deleting image: ' . $e->getMessage()
+            ], 500);
+        }
+    }
 }

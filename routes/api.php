@@ -24,3 +24,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('exportPdfTaksasi/{est}/{date}/{web?}', [ApiController::class, 'exportPdfTaksasi'])->name('exportPdfTaksasi');
 Route::get('generateMaps/{est}/{date}', [ApiController::class, 'generateMaps'])->name('generateMaps');
 Route::post('save-map-image', [ApiController::class, 'saveMapImage'])->name('saveMapImage');
+Route::post('delete-map-image/{filename}', [ApiController::class, 'deleteMapImage'])->name('deleteMapImage');

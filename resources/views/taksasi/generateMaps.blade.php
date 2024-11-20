@@ -46,14 +46,6 @@
     const datetime = @json($datetime);
 
 
-
-    // console.log(arrData)
-
-    document.addEventListener('DOMContentLoaded', function() {
-        createMapImage(arrData, estate_plot, userTaksasi, blokPerEstate, datetime)
-    });
-
-
     function createMapImage() {
         const map = L.map('map', {
             center: [-2.4833826, 112.9721219], // Default coordinates for Central Kalimantan
@@ -479,7 +471,8 @@
                             .catch(error => console.error('Error saving image:', error));
                     })
                     .catch(function(error) {
-                        console.error('Error generating image:', error);
+                        console.log('error gan');
+                        // console.error('Error generating image:', error);
                     });
             }, 2000); // Increased timeout to 2 seconds
         });
@@ -490,6 +483,14 @@
 
 
     }
+
+
+    // console.log(arrData)
+
+    document.addEventListener('DOMContentLoaded', function() {
+        createMapImage(arrData, estate_plot, userTaksasi, blokPerEstate, datetime)
+    });
+
 
     function getMarkerColor(afdeling) {
         const colors = {
