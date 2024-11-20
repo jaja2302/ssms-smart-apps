@@ -1,0 +1,15 @@
+Monitoring pengiriman
+7 ton
+Taksasi vs realisasi
+Yg input kerani radio
+
+Monitoring kehadiran
+Kebutuhan/kehadiran/jumlah anggota
+Jam 10 laporan
+Yg input KTU
+
+usernya asisten-rh
+
+laporan bot ubah ke table dan dikirim format jpg
+
+ubah data ke pdf kemudian convert ke img

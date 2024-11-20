@@ -1,0 +1,74 @@
+
+    table.table-bordered>thead>tr>th {
+        border: 1px solid rgb(0, 0, 0);
+    }
+
+    /* Centering the image */
+    .image-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        /* Adjust as needed */
+    }
+
+    .image-container img {
+        max-width: 100%;
+        /* Ensure the image does not exceed its container */
+        height: auto;
+        /* Maintain aspect ratio */
+    }
+
+    table.table-bordered>tbody>tr>td {
+        border: 1px solid rgb(0, 0, 0);
+    }
+
+    table.table-active>thead>tr>th {
+        border: 1px solid rgb(0, 0, 0);
+    }
+
+    table.table-active>tbody>tr>td {
+        border: 1px solid rgb(0, 0, 0);
+    }
+
+    table.table-primary>thead>tr>th {
+        border: 1px solid rgb(0, 0, 0);
+    }
+
+    table.table-primary>tbody>tr>td {
+        border: 1px solid rgb(0, 0, 0);
+    }
+
+    table.table-bordered>tbody>tr>th {
+        border: 1px solid rgb(0, 0, 0);
+    }
+
+    table.table-warning>thead>tr>th {
+        border: 1px solid rgb(0, 0, 0);
+    }
+
+    table.table-warning>tbody>tr>td {
+        border: 1px solid rgb(0, 0, 0);
+    }
+
+    @font-face {
+        font-family: "Roboto Regular";
+        src: url('fonts/Roboto-Regular.ttf') format('truetype');
+    }
+
+    @font-face {
+        font-family: "Roboto Bold";
+        src: url('fonts/Roboto-Bold.ttf') format('truetype');
+    }
+
+    body {
+        font-family: "Roboto Regular", sans-serif;
+    }
+
+    h1,
+    h2 {
+        font-family: "Roboto Bold", sans-serif;
+    }
+
+    .page-break {
+        page-break-after: always;
+    }

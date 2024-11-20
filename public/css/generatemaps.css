@@ -1,0 +1,93 @@
+#map {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    z-index: 1;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: white;
+}
+
+.label-estate {
+    font-size: 20pt;
+    color: white;
+    text-align: right;
+}
+
+.common-estate-style {
+    color: "#003B73";
+    opacity: 1;
+    fill-opacity: 0.2;
+}
+
+.legend {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.legend h4 {
+    text-align: center;
+    font-size: 16px;
+    margin: 2px 12px 8px;
+    color: #777;
+}
+
+.legend span {
+    position: relative;
+    bottom: 3px;
+}
+
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin: 0 8px 0 0;
+    opacity: 0.7;
+}
+
+.legend i.icon {
+    background-size: 18px;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.label-bidang {
+    font-size: 11pt;
+    color: white;
+    text-align: center;
+    opacity: 1;
+}
+
+.man-marker {
+    /* color: white; */
+    /* filter: invert(35%) sepia(63%) saturate(5614%) hue-rotate(2deg) brightness(102%) contrast(107%); */
+    filter: invert(100%) sepia(5%) saturate(7383%) hue-rotate(276deg) brightness(106%) contrast(117%);
+    /* filter: invert(47%) sepia(6%) saturate(10%) hue-rotate(13deg) brightness(91%) contrast(90%); */
+}
+
+.manMarkerOA {
+    /* color: white; */
+    filter: invert(11%) sepia(92%) saturate(5598%) hue-rotate(345deg) brightness(79%) contrast(106%);
+}
+
+.manMarkerOB {
+    /* color: white; */
+    filter: invert(14%) sepia(66%) saturate(5911%) hue-rotate(287deg) brightness(111%) contrast(120%);
+}
+
+.manMarkerOC {
+    /* color: white; */
+    filter: invert(28%) sepia(75%) saturate(2217%) hue-rotate(224deg) brightness(100%) contrast(108%);
+}
+
+.manMarkerOD {
+    /* color: white; */
+    filter: invert(53%) sepia(87%) saturate(2214%) hue-rotate(165deg) brightness(99%) contrast(103%);
+}
